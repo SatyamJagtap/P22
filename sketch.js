@@ -4,7 +4,7 @@ const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
 const Body = Matter.Body;
-
+var box
 function preload()
 {
 	helicopterIMG=loadImage("helicopter.png")
@@ -41,7 +41,10 @@ function setup() {
 
 
 	Engine.run(engine);
-  
+	box1 = new Box(400,600,100,20);
+	box2 = new Box(350,560,10,100);
+	box3 = new Box(450,560,10,100);
+	
 }
 
 
@@ -50,8 +53,10 @@ function draw() {
   background(0);
   packageSprite.x= packageBody.position.x 
   packageSprite.y= packageBody.position.y 
-  drawSprites();
- 
+  drawSprites(); 
+  box1.display();
+  box2.display();
+  box3.display();
 }
 
 function keyPressed() {
